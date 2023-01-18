@@ -1,0 +1,22 @@
+.box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8 {
+    background-color: white;
+    border-radius: 15px;
+    height: 200px;
+    max-height: 35vh;
+    box-shadow: 0px 12px 18px -6px rgba(0,0,0,0.3) ;
+}
+ 
+.box {
+    margin: 20px;
+}
+
+.grid{
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.grid > div {
+    flex-basis: calc(25% - 40px);
+}
