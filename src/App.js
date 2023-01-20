@@ -6,7 +6,7 @@ import Task from './Components/Task.jsx'
 function App() {
   return (
     <div className="App">
-      {/* <Homepage/> */}
+      <Homepage/>
       <Task/>
     </div>
   );
