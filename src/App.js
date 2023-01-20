@@ -1,6 +1,7 @@
-import './App.css'
 import NavBar from './Components/NavBar.jsx'
-import Homepage from './Components/Homepage.jsx'
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Homepage from './Components/Homepage.jsx';
 import Task from './Components/Task.jsx'
 
 function App() {
