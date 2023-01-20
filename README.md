@@ -1,3 +1,7 @@
+## commands used by the team
+npm install --save react-circular-progressbar
+npm install react-bootstrap bootstrap
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
