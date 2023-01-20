@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Task (props) {
+function Task () {
     return (
         <div>
-            <h1>Task</h1>
+            <h1>Task Page</h1>
         </div>
     )
 }
