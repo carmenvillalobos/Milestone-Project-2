@@ -1,3 +1,26 @@
+We installed react by typing the following into the terminal: 
+- npx create-react-app milestone-project-2 cd milestone-project-2 (this creates a react application code template)
+
+We installed .env by typing the following into the terminal: 
+- npm install dotenv --save (recall that this package )
+
+We installed express by typing the following into the terminal: 
+- npm install express (recall that express basically makes a server for your repo)
+
+Make sure to install the following sequelize commands to this repo: 
+- npm i sequelize (installs sequelize as a dependency)
+- npm i pg pg-hstore (installs the native Postgres drivers)
+- npm i -g sequelize-cli (globally installs the Sequelize CLI package, recall that Sequelize CLI is an npm package that lets us run commands through the terminal for generating models (tables/columns) and more).
+- npx sequelize init (this CLI command generates an empty 
+Sequelize project into your app; note: I created a folder named sequelize and installed the empty project there for organizational purposes since we are using other languages within this app)
+
+For your .env file, make sure to include the following code:
+DB_USERNAME=postgres?
+DB_PASSWORD=your psql password 
+DB_NAME=milestone_project_2
+DB_HOST=localhost
+PORT=3000
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
