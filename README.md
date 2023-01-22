@@ -20,6 +20,9 @@ DB_PASSWORD=your psql password
 DB_NAME=milestone_project_2
 DB_HOST=localhost
 PORT=3000
+## commands used by the team
+npm install --save react-circular-progressbar
+npm install react-bootstrap bootstrap
 
 # Getting Started with Create React App
 

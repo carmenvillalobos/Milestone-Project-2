@@ -1,0 +1,22 @@
+.container-fluid {
+    background-color:#4C5270;
+    height: 100vh;
+}
+
+@media all and (max-width: 768px) {
+    .weekly {
+        max-width: 350px;
+    }
+    .daily {
+        max-width: 350px;
+    }
+    div.progress-bar {
+        display: none;
+    }
+}
+
+@media all and (min-width: 770px) {
+    .progress-wheel {
+        display: none;
+    }
+}
