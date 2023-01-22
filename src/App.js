@@ -7,9 +7,9 @@ import Task from './Components/Task.jsx'
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <Homepage/>
-      {/* <Task/> */}
+      {/* <NavBar/> */}
+      {/* <Homepage/> */}
+      <Task/>
     </div>
   );
 }
