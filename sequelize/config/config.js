@@ -1,6 +1,6 @@
 //When I installed npx sequelize-cli init, the template made this file as config.json. I changed this file to config.js and used the same code that we learned in our sql class
-
-require('dotenv').config()
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 module.exports = {
   "development": {
     username: process.env.DB_USERNAME,
