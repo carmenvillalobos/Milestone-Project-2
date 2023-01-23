@@ -1,6 +1,37 @@
 .container-fluid {
     background-color:#4C5270;
-    height: 100vh;
+    height: 100%;
+}
+
+.image-block {
+    display: flex;
+    justify-content: space-around;
+}
+
+.wd-screen-img {
+    position: relative;
+    top: 45px;
+    transition-duration: 1s;
+}
+
+.hide {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 250px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.wd-screen-img:hover + .hide {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: all 1s ease-in;
+}
+
+.wd-screen-img:hover {
+    transform: translateY(-35px) ;
 }
 
 @media all and (max-width: 768px) {
@@ -20,3 +51,4 @@
         display: none;
     }
 }
+
