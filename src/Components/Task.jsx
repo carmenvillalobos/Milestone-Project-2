@@ -13,12 +13,12 @@ function Task() {
     <div>
         <NavBar/>
         <h1>Weekly To-Do List</h1>
-        {/* <div>
-            <h5 className="pro">Weekly Progress Bar</h5>
+        <div>
+            <h5 className="pro">Your Progress Bar</h5>
             {testData.map((item, idx) => (
             <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
             ))}
-        </div> */}
+        </div>
         <div className='grid'>
             <Card style={{ width: '18rem' }} className="box boxes">
                 <Card.Body>
@@ -28,7 +28,7 @@ function Task() {
                     </a>
                 </Card.Body>
             </Card>
-            {/* <Card style={{ width: '18rem' }} className="box boxes">
+            <Card style={{ width: '18rem' }} className="box boxes">
                 <Card.Body>
                     <Card.Title>Tuesday</Card.Title>
                     <Button variant="primary" size="sm">Add A Goal</Button>
@@ -69,7 +69,7 @@ function Task() {
                     <Card.Title>Extra Tasks</Card.Title>
                     <Button variant="primary" size="sm">Add A Goal</Button>
                 </Card.Body>
-            </Card> */}
+            </Card>
         </div>
     </div>
   );
