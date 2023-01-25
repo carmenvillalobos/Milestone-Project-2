@@ -29,6 +29,22 @@ app.get('/api/tasks',async  (req, res) => {
     res.status(500).json(error)}
 })
 
+// CREATE ROUTE
+// CREATE TASK
+app.post('/api/tasks', async (req, res) => {
+  try {
+      console.log(req.body)
+      const newTasks = await ToDoList.create(req.body)
+      res.status(200).json({
+          message: 'Successfully inserted a new task',
+          data: newTasks
+      })
+  } catch(err) {
+      console.log(err)
+      res.status(500).json(err)
+  }
+})
+
 
 //LISTEN
 app.listen(port, () => {
