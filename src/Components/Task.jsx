@@ -16,7 +16,7 @@ function Task() {
             <Card style={{ width: '18rem' }} className="box boxes">
             <Card.Body>
                 <Card.Title>Monday</Card.Title>
-                    <Link to="/tasks/monday-form">
+                    <Link to="/tasks/form">
                     <Button 
                         variant="primary" 
                         size="sm" 
