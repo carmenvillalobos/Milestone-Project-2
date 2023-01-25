@@ -6,7 +6,6 @@ import {Card} from 'react-bootstrap';
 import {Row} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
 import {Image} from 'react-bootstrap';
-import {ProgressBar} from 'react-bootstrap';
 import {CircularProgressbar} from 'react-circular-progressbar';
 import {ProgressBar} from 'react-bootstrap'
 import 'react-circular-progressbar/dist/styles.css'
@@ -40,9 +39,28 @@ function Homepage (props) {
                 </Card.Body>
             </Card>
         <br/>
-
-
-            {/* <Row xs={2} md={2}>
+        <div className="image-block">
+                <div>
+                    <Image className="wd-screen-img" variant="top" src="https://png.pngtree.com/png-vector/20191018/ourlarge/pngtree-hands-holding-clipboard-with-to-do-list-template-and-pencil-filling-png-image_1828754.jpg" alt="to-do checklist"style={{marginBottom: 20}} width="150" roundedCircle/>
+                    <div className="hide" style={{padding: "1em", backgroundColor: "#BCECE0", color: "black", border: "0.5px", borderRadius: "25px", boxShadow: "0px 12px 18px -6px rgba(0,0,0,0.5)"}}>
+                        <p><b>Keep track</b> of your daily productivity with chore lists</p>
+                    </div>
+                </div>
+                <div>
+                    <Image className="wd-screen-img" variant="top" src="https://classroomclipart.com/images/gallery/Clipart/Fitness_and_Exercise/TN_man-running-on-treadmill-work-out-clipart.jpg" alt="exercising on treadmill" style={{marginBottom: 20}} width="153" roundedCircle/>
+                    <div className="hide" style={{padding: "1em", backgroundColor: "#BCECE0", color: "black", border: "0.5px", borderRadius: "25px", boxShadow: "0px 12px 18px -6px rgba(0,0,0,0.5)"}}>
+                        <p><b>Stay consistent</b> and focused on your fitness goals</p>
+                    </div>
+                </div>
+                <div>
+                    <Image className="wd-screen-img" variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3xG6YymZ00mI8i665mN2rKJJT9o2txR-EWA&usqp=CAU" alt="reading/writing hobbies" style={{marginBottom: 20}} width="150" roundedCircle/>
+                    <div className="hide" style={{padding: "1em", backgroundColor: "#BCECE0", color: "black", border: "0.5px", borderRadius: "25px", boxShadow: "0px 12px 18px -6px rgba(0,0,0,0.5)"}}>
+                        <p><b>Make time</b> for your hobbies and personal growth</p>
+                    </div>
+                </div>
+            </div>
+        <br/>
+            <Row xs={2} md={2}>
                 <Col>
                     <Card className="daily" style={{backgroundColor: "#BCECE0"}}>
                         <Card.Body>
@@ -87,7 +105,7 @@ function Homepage (props) {
                     </Card>
                 </Col>
             </Row>
-            <br/> */}
+            <br/>
         </div>
     )
 }
