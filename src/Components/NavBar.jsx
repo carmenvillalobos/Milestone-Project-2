@@ -10,6 +10,9 @@ function NavBar (props) {
       <Navbar.Item>
         <Navbar.Link href="/tasks">To-Do</Navbar.Link>
       </Navbar.Item>
+      <Navbar.Item>
+        <Navbar.Link href="/tasks/form">Add Task</Navbar.Link>
+      </Navbar.Item>
     </Navbar>
     )
 }

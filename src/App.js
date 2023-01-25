@@ -4,7 +4,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Homepage from './Components/Homepage.jsx';
 import Task from './Components/Task.jsx'
 import Form from './Components/Form.jsx'
+import useLocalStorage from './hooks/useLocalStorage';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'; 
+
+const AppRouter = () => {
+  const [books, setBooks] = useLocalStorage('books', []);
+  
+  return (
+    <Route
+    render={(props) => (
+      <Form {...props} books={books} setBooks={setBooks} />
+    )}
+    path="/add"
+  />
+  )
+ }
 
 function App() {
   return (
