@@ -2,6 +2,7 @@
 
 We installed react by typing the following into the terminal: 
 - npx create-react-app milestone-project-2 cd milestone-project-2 (this creates a react application code template)
+- npm i react-router-dom@6
 
 We installed .env by typing the following into the terminal: 
 - npm install dotenv --save (recall that this package )
@@ -19,10 +20,10 @@ Sequelize project into your app; note: I created a folder named sequelize and in
 - npx sequelize-cli db:migrate (runs a migration)
 
 For your .env file, make sure to include the following code:
-DB_NAME=milestone_project_2
-DB_HOST=localhost
-DB_PASSWORD=your psql password
-DB_USERNAME=postgres
+- DB_NAME=milestone_project_2
+- DB_HOST=localhost
+- DB_PASSWORD=your psql password
+- DB_USERNAME=postgres
 
 For some reason, I was unable to connect the .env file to the config.js file, so I created the file .sequelizerc to help fix that issue and it did. 
 
