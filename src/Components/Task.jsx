@@ -19,7 +19,7 @@ function Task() {
             <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
             ))}
         </div>
-        <div className='grid'>
+        {/* <div className='grid'>
             <Card style={{ width: '18rem' }} className="box boxes">
                 <Card.Body>
                     <Card.Title> Monday</Card.Title>
@@ -28,49 +28,7 @@ function Task() {
                     </a>
                 </Card.Body>
             </Card>
-            <Card style={{ width: '18rem' }} className="box boxes">
-                <Card.Body>
-                    <Card.Title>Tuesday</Card.Title>
-                    <Button variant="primary" size="sm">Add A Goal</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '18rem' }} className="box boxes">
-                <Card.Body>
-                    <Card.Title>Wednesday</Card.Title>
-                    <Button variant="primary" size="sm">Add A Goal</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '18rem' }} className="box boxes">
-                <Card.Body>
-                    <Card.Title>Thursday</Card.Title>
-                    <Button variant="primary" size="sm">Add A Goal</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '18rem' }} className="box boxes">
-                <Card.Body>
-                    <Card.Title>Friday</Card.Title>
-                    <Button variant="primary" size="sm">Add A Goal</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '18rem' }} className="box boxes">
-                <Card.Body>
-                    <Card.Title>Saturday</Card.Title>
-                    <Button variant="primary" size="sm">Add A Goal</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '18rem' }} className="box boxes">
-                <Card.Body>
-                    <Card.Title>Sunday</Card.Title>
-                    <Button variant="primary" size="sm">Add A Goal</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '18rem' }} className="box boxes">
-                <Card.Body>
-                    <Card.Title>Extra Tasks</Card.Title>
-                    <Button variant="primary" size="sm">Add A Goal</Button>
-                </Card.Body>
-            </Card>
-        </div>
+        </div> */}
     </div>
   );
 }

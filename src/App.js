@@ -7,8 +7,8 @@ import Task from './Components/Task.jsx'
 function App() {
   return (
     <div className="App">
-      {/* <NavBar/> */}
-      {/* <Homepage/> */}
+      <NavBar/>
+      <Homepage/>
       <Task/>
     </div>
   );
