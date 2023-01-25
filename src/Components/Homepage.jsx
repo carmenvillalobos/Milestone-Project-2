@@ -1,4 +1,5 @@
 import './Homepage.css'
+import {Link} from "react-router-dom"
 import React from 'react';
 import {Button, ListGroup} from 'react-bootstrap';
 import {Card} from 'react-bootstrap';
@@ -7,6 +8,7 @@ import {Col} from 'react-bootstrap';
 import {CircularProgressbar} from 'react-circular-progressbar';
 import {ProgressBar} from 'react-bootstrap'
 import 'react-circular-progressbar/dist/styles.css'
+import NavBar from './NavBar';
 
 function Homepage (props) {
     // placeholder progress bar data
@@ -14,6 +16,8 @@ function Homepage (props) {
     const weekly = 20; // %
     return (
         <div class="container-fluid">
+            <h1 style={{ color: 'white' }}>To-do List Application</h1>
+            <NavBar></NavBar>
         <br/>
             <Card text="white" className="mb-2" style={{backgroundColor: "#00CBCC", borderRadius: "25px 25px 25px 25px"}}>
                 <Card.Body>
@@ -26,12 +30,17 @@ function Homepage (props) {
                     </Card.Text>
                 </Card.Body>
                 <Card.Body>
-                    
-                    <Button variant="warning" size="sm">Create New List</Button>
+                    <Link to="/tasks">
+                    <Button variant="warning" size="sm">
+                        Create New List
+                    </Button>
+                    </Link>
                 </Card.Body>
             </Card>
         <br/>
-            <Row xs={2} md={2}>
+
+
+            {/* <Row xs={2} md={2}>
                 <Col>
                     <Card className="daily" style={{backgroundColor: "#BCECE0"}}>
                         <Card.Img variant="top" src=""/>
@@ -78,7 +87,7 @@ function Homepage (props) {
                     </Card>
                 </Col>
             </Row>
-            <br/>
+            <br/> */}
         </div>
     )
 }
