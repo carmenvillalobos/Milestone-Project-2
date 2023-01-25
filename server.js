@@ -20,6 +20,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+//GET ROUTE
+//VIEW ALL TASKS
 app.get('/api/tasks',async  (req, res) => {
   try {
     const foundTasks = await ToDoList.findAll()
@@ -44,6 +46,43 @@ app.post('/api/tasks', async (req, res) => {
       res.status(500).json(err)
   }
 })
+
+// UPDATE ROUTE
+// UPDATE A TASK
+app.put('/api/tasks/:id', async (req, res) => {
+  try {
+      const updatedTasks = await ToDoList.update(req.body, {
+        where: {
+            id: req.params.id
+        }
+    })
+      res.status(200).json({
+          message: `Successfully updated ${updatedTasks} task(s)`
+      })
+  } catch(err) {
+      res.status(500).json(err)
+  }
+})
+
+// DELETE ROUTE
+// DELETE A BAND
+app.delete('/api/tasks/:id', async (req, res) => {
+  try {
+    console.log(req.params.id)
+      const deletedTasks = await ToDoList.destroy({
+          where: {
+              id: req.params.id
+          }
+      })
+      res.status(200).json({
+          message: `Successfully deleted ${deletedTasks} tasks(s)`
+      })
+  } catch(err) {
+      console.log(err)
+      res.status(500).json(err)
+  }
+})
+
 
 
 //LISTEN
