@@ -1,3 +1,5 @@
+## commands used
+
 We installed react by typing the following into the terminal: 
 - npx create-react-app milestone-project-2 cd milestone-project-2 (this creates a react application code template)
 - npm i react-router-dom@6
@@ -25,9 +27,8 @@ For your .env file, make sure to include the following code:
 
 For some reason, I was unable to connect the .env file to the config.js file, so I created the file .sequelizerc to help fix that issue and it did. 
 
-## commands used by the team
-npm install --save react-circular-progressbar
-npm install react-bootstrap bootstrap
+- npm install --save react-circular-progressbar
+- npm install react-bootstrap bootstrap
 
 # Getting Started with Create React App
 
