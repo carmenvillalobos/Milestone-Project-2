@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import NavBar from './NavBar';
@@ -9,6 +9,7 @@ import {Link} from "react-router-dom"
 function Task() {
   return (
     <div>
+        <NavBar/>
         <h1>Weekly To-Do List</h1>
         <NavBar></NavBar>
         <div className='grid'>
@@ -64,7 +65,6 @@ function Task() {
                 <Button variant="primary" size="sm">Add Task</Button>
             </Card.Body>
             </Card>
-
         </div>
     </div>
   );

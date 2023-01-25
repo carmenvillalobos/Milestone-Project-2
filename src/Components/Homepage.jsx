@@ -5,6 +5,8 @@ import {Button, ListGroup} from 'react-bootstrap';
 import {Card} from 'react-bootstrap';
 import {Row} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
+import {Image} from 'react-bootstrap';
+import {ProgressBar} from 'react-bootstrap';
 import {CircularProgressbar} from 'react-circular-progressbar';
 import {ProgressBar} from 'react-bootstrap'
 import 'react-circular-progressbar/dist/styles.css'
@@ -19,7 +21,7 @@ function Homepage (props) {
             <h1 style={{ color: 'white' }}>To-do List Application</h1>
             <NavBar></NavBar>
         <br/>
-            <Card text="white" className="mb-2" style={{backgroundColor: "#00CBCC", borderRadius: "25px 25px 25px 25px"}}>
+            <Card text="white" className="mb-2" style={{backgroundColor: "#00CBCC", borderRadius: "25px 25px 25px 25px"}}> {/*main card*/}
                 <Card.Body>
                     <Card.Title>Start Task Managing Today!</Card.Title>
                     <Card.Text className="blockquote mb-0">
@@ -43,7 +45,6 @@ function Homepage (props) {
             {/* <Row xs={2} md={2}>
                 <Col>
                     <Card className="daily" style={{backgroundColor: "#BCECE0"}}>
-                        <Card.Img variant="top" src=""/>
                         <Card.Body>
                             <Card.Title>Today's Tasks</Card.Title>
                         </Card.Body>
@@ -53,7 +54,7 @@ function Homepage (props) {
                         <div className="progress-bar">
                             <ProgressBar now={daily} label={`${daily}%`}/>
                         </div>
-                        <ListGroup className="list-group-flush">
+                        <ListGroup className="w-100 p-2">
                             <ListGroup.Item>Item 1</ListGroup.Item>
                             <ListGroup.Item>Item 2</ListGroup.Item>
                             <ListGroup.Item>Item 3</ListGroup.Item>
@@ -66,7 +67,6 @@ function Homepage (props) {
                 <br/>
                 <Col>
                     <Card className="weekly" style={{backgroundColor: "#BCECE0"}}>
-                        <Card.Img variant="top" src=""/>
                         <Card.Body>
                             <Card.Title>Weekly Tasks</Card.Title>
                         </Card.Body>
@@ -76,7 +76,7 @@ function Homepage (props) {
                         <div className="progress-bar">
                             <ProgressBar now={weekly} label={`${weekly}%`}/>
                         </div>
-                        <ListGroup className="list-group-flush">
+                        <ListGroup className="w-100 p-2">
                             <ListGroup.Item>Item 1</ListGroup.Item>
                             <ListGroup.Item>Item 2</ListGroup.Item>
                             <ListGroup.Item>Item 3</ListGroup.Item>
