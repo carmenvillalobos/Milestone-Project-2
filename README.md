@@ -13,13 +13,17 @@ Make sure to install the following sequelize commands to this repo:
 - npm i -g sequelize-cli (globally installs the Sequelize CLI package, recall that Sequelize CLI is an npm package that lets us run commands through the terminal for generating models (tables/columns) and more).
 - npx sequelize init (this CLI command generates an empty 
 Sequelize project into your app; note: I created a folder named sequelize and installed the empty project there for organizational purposes since we are using other languages within this app)
+- npx sequelize-cli model:generate --name ToDoList --attributes day:string,tasks:string,complete:boolean (this creates a model and makes the migration for you)
+- npx sequelize-cli db:migrate (runs a migration)
 
 For your .env file, make sure to include the following code:
-DB_USERNAME=postgres?
-DB_PASSWORD=your psql password 
 DB_NAME=milestone_project_2
 DB_HOST=localhost
-PORT=3000
+DB_PASSWORD=your psql password
+DB_USERNAME=postgres
+
+For some reason, I was unable to connect the .env file to the config.js file, so I created the file .sequelizerc to help fix that issue and it did. 
+
 ## commands used by the team
 npm install --save react-circular-progressbar
 npm install react-bootstrap bootstrap
