@@ -1,29 +1,33 @@
 // DEPENDENCIES
+const cors = require('cors')
 require('dotenv').config()
 const express = require('express')
 const app = express()
 const port = 3000
-const { bandsController, eventsController, stageController } = require('./controllers')
 const bodyParser = require('body-parser')
+const db = require('./sequelize/models')
+const {Op} = require('sequelize')
+const {ToDoList} = db
 
 // CONFIGURATION / MIDDLEWARE
 app.use(express.json())
 app.use(bodyParser.json())
+app.use(cors())
+
 
 //ROOT
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-
-//TASK
-
-
-// CONTROLLERS 
-//change this to whatever we name our routes
-app.use('/bands', bandsController)
-app.use('/events', eventsController)
-app.use('/stages', stageController)
+app.get('/api/tasks',async  (req, res) => {
+  try {
+    const foundTasks = await ToDoList.findAll()
+    console.log(foundTasks)
+    res.status(200).json(foundTasks)
+} catch (error) {
+    res.status(500).json(error)}
+})
 
 
 //LISTEN

@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from 'react';
+import { Nav } from "react-bootstrap";
+import NavBar from "./NavBar";
+import { Link } from "react-router-dom"
 
 function Form (){
   const [form, setForm] = useState({
@@ -21,12 +24,13 @@ function Form (){
   }
 
   const onSubmit = (e) => {
-    showData();
     e.preventDefault();
+    showData();
   }
 
   return (
     <div>
+      <NavBar/>
       <h1>To-do</h1>
 
       <form onSubmit={onSubmit}>
