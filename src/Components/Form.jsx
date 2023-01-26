@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Nav } from "react-bootstrap";
 import NavBar from "./NavBar";
 import { Link } from "react-router-dom"
+import Homepage from "./Homepage";
 
 function Form (){
   const [form, setForm] = useState({
@@ -24,9 +25,9 @@ function Form (){
   }
 
   const onSubmit = (e) => {
-    e.preventDefault();
-    showData();
-  }
+      e.preventDefault();
+      showData();
+      }
 
   return (
     <div>

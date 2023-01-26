@@ -31,7 +31,7 @@ function Homepage (props) {
                     </Card.Text>
                 </Card.Body>
                 <Card.Body>
-                    <Link to="/tasks">
+                    <Link to="/tasks/form">
                     <Button variant="warning" size="sm">
                         Create New List
                     </Button>

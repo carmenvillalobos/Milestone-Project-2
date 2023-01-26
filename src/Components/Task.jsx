@@ -27,13 +27,25 @@ function Task() {
             <Card.Body>
                 <Card.Title>{e.day}</Card.Title>
                 <Card.Text>{e.tasks}</Card.Text>
-                <Card.Text>{e.complete && 'complete'}</Card.Text>
+                <Card.Text>{e.complete && 'Done ✅'}</Card.Text>
+
+                    {/* EDIT BUTTON */}
                     <Link to="/tasks/form">
                     <Button 
-                        variant="primary" 
+                        variant="info" 
                         size="sm" 
                         type='submit'>
-                            Add Task
+                            Edit
+                    </Button>
+                    </Link>
+
+                    {/* DELETE BUTTON */}
+                    <Link to="/tasks/form">
+                    <Button 
+                        variant="danger" 
+                        size="sm" 
+                        type='submit'>
+                            Delete
                     </Button>
                     </Link>
                 <form action=""></form>

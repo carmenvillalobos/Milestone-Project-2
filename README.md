@@ -1,3 +1,18 @@
+# Project To-do List
+
+To-do List is an app where users can keep track of the tasks that they need to complete or have competed.
+
+| Method | Path | Purpose |
+| ------ | ------------------------------------- | ----------------------------- |
+| GET | `/` | The home page |
+| GET | `/tasks` | Index page listing all tasks |
+| GET | `/tasks/form` | View form for creating a task |
+| POST | `tasks` | Create a new task |
+| GET | `/tasks/:id` | Show one task in detail |
+| GET | `/tasks/:id/edit` | Edit form of a task |
+| PUT | `/tasks/:id` | Update an existing task |
+| DELETE | `/tasks/:id` | Delete a task |
+
 ## commands used
 
 We installed react by typing the following into the terminal: 
