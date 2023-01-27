@@ -51,11 +51,11 @@ function Form (){
             </div>
           </label>
         </div>
+
         <div>
-        <Link to="/tasks">
           <button>Submit</button>
-        </Link>
         </div>
+        
       </form>
     </div>
   )
