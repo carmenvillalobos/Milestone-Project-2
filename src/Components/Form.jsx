@@ -2,14 +2,15 @@ import React from "react";
 import { useState } from 'react';
 import { Nav } from "react-bootstrap";
 import NavBar from "./NavBar";
-import { Link } from "react-router-dom"
-import Homepage from "./Homepage";
+import { useNavigate } from "react-router-dom"
 
 function Form (){
   const [form, setForm] = useState({
-    task: '',
-    completion: false
+    tasks: '',
+    complete: false
   });
+
+  let navigate = useNavigate();
 
   const onChange = (e) => {
     const { value, name, type, checked } = e.target;
@@ -27,6 +28,17 @@ function Form (){
   const onSubmit = (e) => {
       e.preventDefault();
       showData();
+
+  fetch('http://localhost:3000/api/tasks', { 
+    method: 'POST', 
+    body: JSON.stringify(form),
+    headers: {"Content-Type": "application/json"}
+    }) .then(response => response.json())
+    .then(data => console.log(data)) 
+    .catch(error => console.error(error))
+
+ 
+  navigate('/tasks');
       }
 
   return (
@@ -38,7 +50,11 @@ function Form (){
 
         <label>
           <div>Task:</div>
-          <textarea onChange={onChange} name="task" value ={form.task}></textarea>
+          <textarea 
+            onChange={onChange} 
+            name="tasks" 
+            value ={form.tasks}>
+          </textarea>
         </label>
 
         <div>
@@ -46,7 +62,12 @@ function Form (){
             <div>
               Complete?
                 <div>
-                  <input type="checkbox" onChange={onChange} name="completion" value ={form.completion}></input>Yes
+                  <input 
+                    type="checkbox" 
+                    onChange={onChange} 
+                    name="complete" 
+                    value={form.complete}>
+                  </input>Yes
                 </div>
             </div>
           </label>
