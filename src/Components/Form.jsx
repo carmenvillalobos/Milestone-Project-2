@@ -1,4 +1,6 @@
 import React from "react";
+import NavBar from "./NavBar"
+import {Link} from "react-router-dom"
 import { useState } from 'react';
 
 function Form (){
@@ -27,6 +29,7 @@ function Form (){
 
   return (
     <div>
+      <NavBar/>
       <h1>To-do</h1>
 
       <form onSubmit={onSubmit}>
@@ -46,11 +49,11 @@ function Form (){
             </div>
           </label>
         </div>
-
         <div>
+        <Link to="/tasks">
           <button>Submit</button>
+        </Link>
         </div>
-
       </form>
     </div>
   )

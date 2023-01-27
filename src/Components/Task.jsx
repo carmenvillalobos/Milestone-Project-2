@@ -9,13 +9,12 @@ function Task() {
   return (
     <div>
         <NavBar/>
-        <h1>Weekly To-Do List</h1>
-        <NavBar></NavBar>
+        <h1>To-Do List</h1>
         <div className='grid'>
             <Card style={{ width: '18rem' }} className="box boxes">
             <Card.Body>
                 <Card.Title>Monday</Card.Title>
-                    <Link to="/tasks/monday-form">
+                    <Link to="/tasks/form">
                     <Button 
                         variant="primary" 
                         size="sm" 
