@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import NavBar from './NavBar';
-import Form from './Form';
 import "./Task.css"
 import {useEffect, useState} from 'react'
 import { useNavigate } from "react-router-dom"
@@ -33,7 +32,6 @@ function deleteTask(id){
     navigate(0);
 }
 
-
   return (
     <div>
         <NavBar/>
@@ -45,16 +43,12 @@ function deleteTask(id){
                 <Card.Title>{e.day}</Card.Title>
                 <Card.Text>{e.tasks}</Card.Text>
                 <Card.Text>{e.complete && 'Done ✅'}</Card.Text>
-
                     {/* EDIT BUTTON */}
-
                     <Link to={`/tasks/form/edit/${e.id}`}>
                     <Button variant="warning" size="sm">
                         Edit
                     </Button>
                     </Link>
-                   
-
                     {/* DELETE BUTTON */}
                     <Button
                         onClick={ () => deleteTask(e.id)} 

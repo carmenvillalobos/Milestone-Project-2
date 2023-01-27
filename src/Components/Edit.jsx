@@ -47,23 +47,21 @@ function EditTask(){
             .catch(error => console.error(error))
             console.log("Edited: ", id)
   
-   
-    navigate('/tasks');
-        }
+        navigate('/tasks');
+    }
   
     return (
       <div>
         <NavBar/>
         <h1>To-do</h1>
-  
         <form onSubmit={onSubmit}>
-  
       <div>
       <label>
           <div>Day:</div>
           <select 
             onChange={onChange} 
             name="day">
+              <option disabled selected value> -Select An Option- </option>
               <option value="Sunday">Sunday</option>
               <option value="Monday">Monday</option>
               <option value="Tuesday">Tuesday</option>
