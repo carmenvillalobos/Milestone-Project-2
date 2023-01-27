@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 
 function Form (){
   const [form, setForm] = useState({
+    day: '',
     tasks: '',
     complete: false
   });
@@ -48,6 +49,23 @@ function Form (){
 
       <form onSubmit={onSubmit}>
 
+      <div>
+      <label>
+          <div>Day:</div>
+          <select 
+            onChange={onChange} 
+            name="day">
+              <option value="Sunday">Sunday</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+          </select>
+        </label>
+        </div>
+
         <label>
           <div>Task:</div>
           <textarea 
@@ -56,6 +74,7 @@ function Form (){
             value ={form.tasks}>
           </textarea>
         </label>
+
 
         <div>
           <label>
