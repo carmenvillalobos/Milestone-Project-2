@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import NavBar from './NavBar';
 import Form from './Form';
+import Edit from "./Edit";
 import "./Task.css"
 import {useEffect, useState} from 'react'
 
@@ -22,6 +23,34 @@ function Task() {
         <NavBar/>
         <h1>To-Do List</h1>
         <div className='grid'>
+
+            {/* SAMPLE CARD */}
+            <Card style={{ width: '18rem' }} className="box boxes">
+                <Card.Body>
+                    <Card.Title>Tuesday</Card.Title>
+                    <Link to="/tasks/form">
+                    <Button variant="primary" size="sm">Add Task</Button>
+                    </Link>
+                    <Link to="/tasks/form">
+                    <Button 
+                        variant="info" 
+                        size="sm" 
+                        type='submit'>
+                            Edit
+                    </Button>
+                    </Link>
+                    <Link to="/tasks">
+                    <Button 
+                        variant="danger" 
+                        size="sm" 
+                        type='submit'>
+                            Delete
+                    </Button>
+                    </Link>
+                </Card.Body>
+            </Card>
+            {/* SAMPLE CARD */}
+
             {tasks.length && tasks.map(e => (
             <Card style={{ width: '18rem' }} className="box boxes">
             <Card.Body>
