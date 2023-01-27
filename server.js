@@ -8,11 +8,13 @@ const bodyParser = require('body-parser')
 const db = require('./sequelize/models')
 const {Op} = require('sequelize')
 const {ToDoList} = db
+const path = require("path");
 
 // CONFIGURATION / MIDDLEWARE
 app.use(express.json())
 app.use(bodyParser.json())
 app.use(cors())
+app.use(express.static(path.join(__dirname, "..", "build")));
 
 
 //ROOT
@@ -103,4 +105,8 @@ app.delete('/api/tasks/:id', async (req, res) => {
 //LISTEN
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+})
+
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
 })
