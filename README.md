@@ -7,7 +7,7 @@ To-do List is an app where users can keep track of the tasks that they need to c
 | GET | `/` | The home page |
 | GET | `/tasks` | Index page listing all tasks |
 | GET | `/tasks/form` | View form for creating a task |
-| POST | `tasks` | Create a new task |
+| POST | `/tasks` | Create a new task |
 | GET | `/tasks/:id` | Show one task in detail |
 | GET | `/tasks/:id/edit` | Edit form of a task |
 | PUT | `/tasks/:id` | Update an existing task |

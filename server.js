@@ -25,8 +25,22 @@ app.get('/', (req, res) => {
 app.get('/api/tasks',async  (req, res) => {
   try {
     const foundTasks = await ToDoList.findAll()
-    console.log(foundTasks)
+    // console.log(foundTasks)
     res.status(200).json(foundTasks)
+} catch (error) {
+    res.status(500).json(error)}
+})
+
+//GET 1 ROUTE
+//VIEW 1 TASK
+app.get('/api/tasks/:id',async  (req, res) => {
+  try {
+    const foundTask = await ToDoList.findOne({
+      where: {
+          id: req.params.id
+      }
+  })
+    res.status(200).json(foundTask)
 } catch (error) {
     res.status(500).json(error)}
 })
@@ -51,6 +65,7 @@ app.post('/api/tasks', async (req, res) => {
 // UPDATE A TASK
 app.put('/api/tasks/:id', async (req, res) => {
   try {
+      console.log(req.body, req.params.id)
       const updatedTasks = await ToDoList.update(req.body, {
         where: {
             id: req.params.id
