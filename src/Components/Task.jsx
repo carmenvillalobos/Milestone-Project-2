@@ -6,9 +6,12 @@ import Form from './Form';
 import Edit from "./Edit";
 import "./Task.css"
 import {useEffect, useState} from 'react'
+import { useNavigate } from "react-router-dom"
 
 function Task() {
     const [tasks, setTasks] = useState([]);
+
+    let navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -18,6 +21,20 @@ function Task() {
         }
         fetchData()
     }, [])
+
+function deleteTask(id){
+    fetch(`http://localhost:3000/api/tasks/${id}`, { 
+    method: 'DELETE',
+    headers: {"Content-Type": "application/json"}
+    }) .then(response => response.json())
+    .then(data => console.log(data)) 
+    .catch(error => console.error(error))
+    console.log("deleted: ", id)
+
+    navigate(0);
+}
+
+
   return (
     <div>
         <NavBar/>
@@ -59,24 +76,22 @@ function Task() {
                 <Card.Text>{e.complete && 'Done ✅'}</Card.Text>
 
                     {/* EDIT BUTTON */}
-                    <Link to="/tasks/form">
-                    <Button 
-                        variant="info" 
-                        size="sm" 
-                        type='submit'>
-                            Edit
+
+                    <Link to={`/tasks/form/edit/${e.id}`}>
+                    <Button variant="warning" size="sm">
+                        Edit
                     </Button>
                     </Link>
+                   
 
                     {/* DELETE BUTTON */}
-                    <Link to="/tasks/form">
-                    <Button 
+                    <Button
+                        onClick={ () => deleteTask(e.id)} 
                         variant="danger" 
                         size="sm" 
                         type='submit'>
                             Delete
                     </Button>
-                    </Link>
                 <form action=""></form>
             </Card.Body>
             </Card>

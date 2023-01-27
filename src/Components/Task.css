@@ -19,9 +19,9 @@
     flex-direction: row;
 }
 
-.grid > div {
+/* .grid > div {
     flex-basis: calc(24% - 40px);
-} 
+}  */
 
 .pro{
     margin-top: 20px; 

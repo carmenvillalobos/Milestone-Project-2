@@ -1,16 +1,25 @@
+import { useNavigate, useParams } from "react-router-dom"
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NavBar from "./NavBar";
-import { Link } from "react-router-dom"
-import Button from 'react-bootstrap/Button';
 
-
-function Edit (){
+function EditTask(){
     const [form, setForm] = useState({
-      task: '',
-      completion: false
+      tasks: '',
+      complete: false
     });
+    let {id} = useParams();
+    let navigate = useNavigate();
   
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(`http://localhost:3000/api/tasks/${id}`)
+            const resData = await response.json()
+            setForm(resData)
+        }
+        fetchData()
+    }, [])
+
     const onChange = (e) => {
       const { value, name, type, checked } = e.target;
   
@@ -27,6 +36,18 @@ function Edit (){
     const onSubmit = (e) => {
         e.preventDefault();
         showData();
+  
+        fetch(`http://localhost:3000/api/tasks/${id}`, { 
+            method: 'PUT', 
+            body: JSON.stringify(form),
+            headers: {"Content-Type": "application/json"}
+            }) .then(response => response.json())
+            .then(data => console.log(data)) 
+            .catch(error => console.error(error))
+            console.log("Edited: ", id)
+  
+   
+    navigate('/tasks');
         }
   
     return (
@@ -38,7 +59,11 @@ function Edit (){
   
           <label>
             <div>Task:</div>
-            <textarea onChange={onChange} name="task" value ={form.task}></textarea>
+            <textarea 
+              onChange={onChange} 
+              name="tasks" 
+              value ={form.tasks}>
+            </textarea>
           </label>
   
           <div>
@@ -46,7 +71,13 @@ function Edit (){
               <div>
                 Complete?
                   <div>
-                    <input type="checkbox" onChange={onChange} name="completion" value ={form.completion}></input>Yes
+                    <input 
+                      type="checkbox" 
+                      onChange={onChange} 
+                      name="complete" 
+                      value={form.complete}
+                      checked={form.complete}>
+                    </input>Yes
                   </div>
               </div>
             </label>
@@ -61,4 +92,4 @@ function Edit (){
     )
   }
   
-  export default Edit;
+  export default EditTask;
