@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from 'react';
 import NavBar from "./NavBar";
 import { useNavigate } from "react-router-dom"
+import Button from 'react-bootstrap/Button';
+import "./Form.css"
 
 function Form (){
   const [form, setForm] = useState({
@@ -26,34 +28,32 @@ function Form (){
   }
 
   const onSubmit = (e) => {
-      e.preventDefault();
-      showData();
+    e.preventDefault();
+    showData();
 
-  fetch('http://localhost:3000/api/tasks', { 
-    method: 'POST', 
-    body: JSON.stringify(form),
-    headers: {"Content-Type": "application/json"}
-    }) .then(response => response.json())
-    .then(data => console.log(data)) 
-    .catch(error => console.error(error))
-
- 
-  navigate('/tasks');
-      }
+    fetch('http://localhost:3000/api/tasks', { 
+      method:'POST', 
+      body: JSON.stringify(form),
+      headers:{"Content-Type": "application/json"}
+      }).then(response => response.json())
+      .then(data => console.log(data)) 
+      .catch(error => console.error(error))
+      navigate('/tasks');
+  }
 
   return (
     <div>
+      <h1>Create A Task</h1>
       <NavBar/>
-      <h1>To-do</h1>
-
       <form onSubmit={onSubmit}>
-
       <div>
       <label>
-          <div>Day:</div>
+          <div className="day">Day:</div>
           <select 
-            onChange={onChange} 
+            onChange={onChange}
+            className="round" 
             name="day">
+              <option disabled selected value> - Select An Option - </option>
               <option value="Sunday">Sunday</option>
               <option value="Monday">Monday</option>
               <option value="Tuesday">Tuesday</option>
@@ -69,32 +69,34 @@ function Form (){
           <div>Task:</div>
           <textarea 
             onChange={onChange} 
+            className="task"
             name="tasks" 
             value ={form.tasks}>
           </textarea>
         </label>
 
-
-        <div>
+        <div className="check">
           <label>
             <div>
-              Complete?
+              Task Completed?
                 <div>
                   <input 
-                    type="checkbox" 
+                    type="checkbox"
+                    className="comp" 
                     onChange={onChange} 
                     name="complete" 
                     value={form.complete}>
-                  </input>Yes
+                  </input> Yes
                 </div>
             </div>
           </label>
         </div>
-
-        <div>
-          <button>Submit</button>
-        </div>
-
+        <Button 
+          size="sm" 
+          type='submit'
+          className="delete">
+          Submit
+        </Button>
       </form>
     </div>
   )

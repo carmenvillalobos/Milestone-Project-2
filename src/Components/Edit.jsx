@@ -2,6 +2,8 @@ import { useNavigate, useParams } from "react-router-dom"
 import React from "react";
 import { useState, useEffect } from 'react';
 import NavBar from "./NavBar";
+import Button from 'react-bootstrap/Button';
+import "./Form.css"
 
 function EditTask(){
     const [form, setForm] = useState({
@@ -35,33 +37,32 @@ function EditTask(){
     }
   
     const onSubmit = (e) => {
-        e.preventDefault();
-        showData();
-  
-        fetch(`http://localhost:3000/api/tasks/${id}`, { 
-            method: 'PUT', 
-            body: JSON.stringify(form),
-            headers: {"Content-Type": "application/json"}
-            }) .then(response => response.json())
-            .then(data => console.log(data)) 
-            .catch(error => console.error(error))
-            console.log("Edited: ", id)
-  
+      e.preventDefault();
+      showData();
+      fetch(`http://localhost:3000/api/tasks/${id}`,{ 
+        method: 'PUT', 
+        body: JSON.stringify(form),
+        headers: {"Content-Type": "application/json"}
+        }).then(response => response.json())
+        .then(data => console.log(data)) 
+        .catch(error => console.error(error))
+        console.log("Edited: ", id)
         navigate('/tasks');
     }
   
     return (
       <div>
+        <h1>Update Task</h1>
         <NavBar/>
-        <h1>To-do</h1>
         <form onSubmit={onSubmit}>
       <div>
       <label>
-          <div>Day:</div>
+          <div className="day">Day:</div>
           <select 
             onChange={onChange} 
+            className="round"
             name="day">
-              <option disabled selected value> -Select An Option- </option>
+              <option disabled selected value> - Select An Option - </option>
               <option value="Sunday">Sunday</option>
               <option value="Monday">Monday</option>
               <option value="Tuesday">Tuesday</option>
@@ -77,32 +78,36 @@ function EditTask(){
             <div>Task:</div>
             <textarea 
               onChange={onChange} 
+              className="task"
               name="tasks" 
               value ={form.tasks}>
             </textarea>
           </label>
   
-          <div>
+          <div className="check">
             <label>
               <div>
-                Complete?
+                Task Completed?
                   <div>
                     <input 
                       type="checkbox" 
+                      className="comp"
                       onChange={onChange} 
                       name="complete" 
                       value={form.complete}
                       checked={form.complete}>
-                    </input>Yes
+                    </input> Yes
                   </div>
               </div>
             </label>
           </div>
-  
-          <div>
-            <button>Submit</button>
-          </div>
-  
+          <Button 
+            size="sm" 
+            type='submit'
+            className="delete"
+            variant="primary">
+            Update
+          </Button>
         </form>
       </div>
     )
