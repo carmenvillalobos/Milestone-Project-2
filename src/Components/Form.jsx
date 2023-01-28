@@ -1,7 +1,9 @@
 import React from "react";
 import NavBar from "./NavBar"
+import './Form.css'
 import { useState } from 'react';
 import { Nav } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"
 
 function Form (){
@@ -42,42 +44,41 @@ function Form (){
       }
 
   return (
-    <div>
+    <div className="container-fluid" style={{backgroundColor: '#4C5270', height: '100vh'}}>
       <NavBar/>
-      <h1>To-do</h1>
+      <h1>Add Task</h1>
+        <form onSubmit={onSubmit}>
 
-      <form onSubmit={onSubmit}>
-
-        <label>
-          <div>Task:</div>
-          <textarea 
-            onChange={onChange} 
-            name="tasks" 
-            value ={form.tasks}>
-          </textarea>
-        </label>
-
-        <div>
           <label>
-            <div>
-              Complete?
-                <div>
-                  <input 
-                    type="checkbox" 
-                    onChange={onChange} 
-                    name="complete" 
-                    value={form.complete}>
-                  </input>Yes
-                </div>
-            </div>
+            <div>Task:</div>
+            <textarea 
+              onChange={onChange} 
+              name="tasks" 
+              value ={form.tasks}>
+            </textarea>
           </label>
-        </div>
 
-        <div>
-          <button>Submit</button>
-        </div>
+          <div>
+            <label>
+              <div>
+                Complete?
+                  <div>
+                    <input 
+                      type="checkbox" 
+                      onChange={onChange} 
+                      name="complete" 
+                      value={form.complete}>
+                    </input>Yes
+                  </div>
+              </div>
+            </label>
+          </div>
 
-      </form>
+          <div>
+            <button>Submit</button>
+          </div>
+
+        </form>
     </div>
   )
 }

@@ -16,7 +16,7 @@ function Homepage (props) {
     const daily = 85;  // %
     const weekly = 20; // %
     return (
-        <div class="container-fluid">
+        <div className="container-fluid">
             <h1 style={{ color: 'white' }}>To-do List Application</h1>
             <NavBar/>
         <br/>
