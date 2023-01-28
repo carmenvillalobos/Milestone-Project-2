@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import NavBar from './NavBar';
-import Form from './Form';
 import "./Task.css"
 import {useEffect, useState} from 'react'
 import { useNavigate } from "react-router-dom"
@@ -26,43 +25,36 @@ function deleteTask(id){
     fetch(`http://localhost:3000/api/tasks/${id}`, { 
     method: 'DELETE',
     headers: {"Content-Type": "application/json"}
-    }) .then(response => response.json())
+    }).then(response => response.json())
     .then(data => console.log(data)) 
     .catch(error => console.error(error))
     console.log("deleted: ", id)
-
     navigate(0);
 }
 
-
   return (
     <div>
+        <h1>Task List</h1>
         <NavBar/>
-        <h1>To-Do List</h1>
         <div className='grid'>
             {tasks.length && tasks.map(e => (
             <Card style={{ width: '18rem' }} className="box boxes">
             <Card.Body>
                 <Card.Title>{e.day}</Card.Title>
                 <Card.Text>{e.tasks}</Card.Text>
-                <Card.Text>{e.complete && 'Done ✅'}</Card.Text>
-
-                    {/* EDIT BUTTON */}
-
+                <Card.Text className="complete">{e.complete && 'Complete ✅'}</Card.Text>
                     <Link to={`/tasks/form/edit/${e.id}`}>
-                    <Button variant="warning" size="sm">
+                    <Button  size="sm">
                         Edit
                     </Button>
                     </Link>
-                   
-
-                    {/* DELETE BUTTON */}
                     <Button
                         onClick={ () => deleteTask(e.id)} 
                         variant="danger" 
                         size="sm" 
-                        type='submit'>
-                            Delete
+                        type='submit'
+                        className="delete">
+                        Delete
                     </Button>
                 <form action=""></form>
             </Card.Body>

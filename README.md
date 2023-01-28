@@ -5,22 +5,25 @@ To-do List is an app where users can keep track of the tasks that they need to c
 | Method | Path | Purpose |
 | ------ | ------------------------------------- | ----------------------------- |
 | GET | `/` | The home page |
-| GET | `/tasks` | Index page listing all tasks |
-| GET | `/tasks/form` | View form for creating a task |
-| POST | `/tasks` | Create a new task |
-| GET | `/tasks/:id` | Show one task in detail |
-| GET | `/tasks/:id/edit` | Edit form of a task |
-| PUT | `/tasks/:id` | Update an existing task |
-| DELETE | `/tasks/:id` | Delete a task |
+| GET | `/api/tasks` | Index page listing all tasks |
+ GET | `/api/tasks/:id` | Index page that lists 1 specific task |
+| GET | `/api/tasks/form` | View form for creating a task |
+| POST | `/api//tasks/form` | Create a new task |
+| GET | `/api/tasks/form/edit/:id` | View a task you would like to edit |
+| PUT | `/api/tasks/form/edit/:id` | Update an existing task |
+| DELETE | `/api/tasks/:id` | Delete a task |
 
 ## commands used
 
 We installed react by typing the following into the terminal: 
 - npx create-react-app milestone-project-2 cd milestone-project-2 (this creates a react application code template)
+We included other dependencies from React by installing the following into the terminal.
 - npm i react-router-dom@6
+- npm install --save react-circular-progressbar
+- npm install react-bootstrap bootstrap
 
 We installed .env by typing the following into the terminal: 
-- npm install dotenv --save (recall that this package )
+- npm install dotenv --save
 
 We installed express by typing the following into the terminal: 
 - npm install express (recall that express basically makes a server for your repo)
@@ -34,16 +37,8 @@ Sequelize project into your app; note: I created a folder named sequelize and in
 - npx sequelize-cli model:generate --name ToDoList --attributes day:string,tasks:string,complete:boolean (this creates a model and makes the migration for you)
 - npx sequelize-cli db:migrate (runs a migration)
 
-For your .env file, make sure to include the following code:
-- DB_NAME=milestone_project_2
-- DB_HOST=localhost
-- DB_PASSWORD=your psql password
-- DB_USERNAME=postgres
-
+Note: 
 For some reason, I was unable to connect the .env file to the config.js file, so I created the file .sequelizerc to help fix that issue and it did. 
-
-- npm install --save react-circular-progressbar
-- npm install react-bootstrap bootstrap
 
 # Getting Started with Create React App
 
