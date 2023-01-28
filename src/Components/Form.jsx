@@ -4,7 +4,6 @@ import './Form.css'
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
-import "./Form.css"
 
 function Form (){
   const [form, setForm] = useState({

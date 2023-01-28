@@ -1,8 +1,14 @@
+.background {
+    background-color: #4C5270;
+    min-height: 100vh;
+}
+
 .boxes {
     background-color: white;
     border-radius: 15px;
     height: 200px;
     box-shadow: 0px 12px 18px -6px rgba(0,0,0,0.3) ;
+    min-height: 220px;
 }
  
 .box {
