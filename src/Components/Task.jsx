@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import NavBar from './NavBar';
-import "./Task.css"
-import {useEffect, useState} from 'react'
-import { useNavigate } from "react-router-dom"
+import "./Task.css";
+import "./Form.css";
+import {useEffect, useState} from 'react';
+import { useNavigate } from "react-router-dom";
 
 function Task() {
     const [tasks, setTasks] = useState([]);
@@ -36,7 +37,7 @@ function deleteTask(id){
     <div>
         <h1>Task List</h1>
         <NavBar/>
-        <div className='grid'>
+        <div className='grid background'>
             {tasks.length && tasks.map(e => (
             <Card style={{ width: '18rem' }} className="box boxes">
             <Card.Body>

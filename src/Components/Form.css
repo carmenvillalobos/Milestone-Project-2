@@ -1,3 +1,8 @@
+.background {
+    background-color: #4C5270;
+    height: 100vh;
+}
+
 .round{
     background-color: white;
     border-radius: 5px;
@@ -10,6 +15,7 @@
 
 .day{
     margin-top: 20px;
+    color: white;
 }
 
 .task{
@@ -23,10 +29,18 @@
     text-align: center;
 }
 
+.task-text {
+    color: white;
+}
+
 .check{
     margin-bottom: 30px;
 }
 
 .comp{
     margin-top:10px;
+}
+
+.submit-task, .update-task {
+    background-color:#36EEE0 !important;
 }
