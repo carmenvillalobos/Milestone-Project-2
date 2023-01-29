@@ -14,7 +14,7 @@ function Task() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('http://localhost:3000/api/tasks')
+            const response = await fetch('http://https://pvxkptbyddlnuoqyuvus.supabase.co/api/tasks')
             const resData = await response.json()
             setTasks(resData)
         }
@@ -22,7 +22,7 @@ function Task() {
     }, [])
 
 function deleteTask(id){
-    fetch(`http://localhost:3000/api/tasks/${id}`, { 
+    fetch(`http://https://pvxkptbyddlnuoqyuvus.supabase.co/api/tasks/${id}`, { 
     method: 'DELETE',
     headers: {"Content-Type": "application/json"}
     }).then(response => response.json())

@@ -16,7 +16,7 @@ function EditTask(){
   
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:3000/api/tasks/${id}`)
+            const response = await fetch(`https://pvxkptbyddlnuoqyuvus.supabase.co/api/tasks/${id}`)
             const resData = await response.json()
             setForm(resData)
         }
@@ -39,7 +39,9 @@ function EditTask(){
     const onSubmit = (e) => {
       e.preventDefault();
       showData();
-      fetch(`http://localhost:3000/api/tasks/${id}`,{ 
+      // fetch(`http://localhost:3000/api/tasks/${id}`,
+      fetch (`https://pvxkptbyddlnuoqyuvus.supabase.co/api/tasks/${id}`,
+      { 
         method: 'PUT', 
         body: JSON.stringify(form),
         headers: {"Content-Type": "application/json"}
