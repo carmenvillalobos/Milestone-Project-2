@@ -31,7 +31,7 @@ function Form (){
     e.preventDefault();
     showData();
 
-    fetch('http://localhost:3000/api/tasks', { 
+    fetch('https://pvxkptbyddlnuoqyuvus.supabase.co/api/tasks', { 
       method:'POST', 
       body: JSON.stringify(form),
       headers:{"Content-Type": "application/json"}

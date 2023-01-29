@@ -33,7 +33,7 @@ function Homepage (props) {
                     </Card.Body>
                     <Card.Body>
                         <Link to="/tasks/form">
-                        <Button variant="warning" size="sm">
+                        <Button  size="sm">
                             Create New List
                         </Button>
                         </Link>
@@ -79,7 +79,9 @@ function Homepage (props) {
                                 <ListGroup.Item>Item 3</ListGroup.Item>
                             </ListGroup>
                             <Card.Body>
-                                <Button size="sm">View All</Button>
+                                <Link to="/tasks">
+                                    <Button size="sm">View All</Button>
+                                </Link>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -101,7 +103,9 @@ function Homepage (props) {
                                 <ListGroup.Item>Item 3</ListGroup.Item>
                             </ListGroup>
                             <Card.Body>
-                                <Button size="sm">View All</Button>
+                                <Link to="/tasks">
+                                    <Button size="sm">View All</Button>
+                                </Link>
                             </Card.Body>
                         </Card>
                     </Col>
