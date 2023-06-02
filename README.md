@@ -1,6 +1,8 @@
-# Project To-do List
+# To-do List Site
 
-To-do List is an app where users can keep track of the tasks that they need to complete or have competed.
+## A to-do list website where users can keep track of the tasks that they need to complete or have completed.
+
+Click <a href="">here</a> for a live version of the app!
 
 | Method | Path | Purpose |
 | ------ | ------------------------------------- | ----------------------------- |
